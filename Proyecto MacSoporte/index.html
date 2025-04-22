@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacSoporte</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Contenedor que carga el navegador almacenado en el js -->
+    <div id="contenedorNavegador"></div>
+    
+    <main>
+        <!-- Seccion de portada principal -->
+        <section class="contenedorPortada" id="contenedorPortada">
+            <div class="portada" id="portada">
+                <div class="capaOscura" id="capaOscura"></div>
+                
+                <img src="img/portada1.jpeg">
+
+                <div class="textoPortada" id="textoPortada">
+                    <h1 class="tituloUno aparecer" id="tituloUno"><bold><em><span style="color:rgb(0, 83, 249)">Mac</span><span style="color:rgb(176, 3, 3)"> Soporte</span></em></bold></h1>
+                    <h2 class="tituloDos aparecer" id="tituloDos">Reparaciones de calidad asegurada</h2>
+                    <h2 class="tituloTres aparecer" id="tituloTres">Somos un equipo técnico especializado en reparaciones electrónicas de productos Apple y Pc tanto portatiles como sobremesa.<br><br>Te ofrecemos un amplio catálogo de hardware, perifericos, accesorios y todo lo que necesites
+                        para mejorar tu experiencia.
+                    </h2>
+                    <div>
+                        <a class="botonPortada aparecer" id="botonPortada" href="#contenedorTituloConocenos">¡Conócenos!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion "Conocenos" de la empresa -->
+        <section id="contenedorTituloConocenos">
+            <div class="contenedorTituloConocenos">
+                <h2 class="tituloConocenos">Ayudanos a construir o reparar tus sueños</h2>
+                <p>Somos expertos en reparar lo irreparable. No es magia, es dedicación y experiencia.</p>
+            </div>
+            <div class="contenedorGeneralConocenos">
+                <div class="contenedorConocenos aparecer" id="contenedorConocenos1">
+                    <div class="tarjetaConocenos">
+                        <div class="imgConocenos">
+                            <img src="img/pasion.svg">
+                        </div>
+                        <div class="contenidoTarjetaConocenos">
+                            <h3>Pasión</h3>
+                            <p>Lo que nos diferencia del resto es el amor y la pasión por nuestro trabajo, no somos un simple servicio técnico, escuchamos y empatizamos con nuestros clientes para solucionar todo tipo de problemas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenedorConocenos aparecer" id="contenedorConocenos2">
+                    <div class="tarjetaConocenos">
+                        <div class="imgConocenos">
+                            <img src="img/profesionalidad.svg">
+                        </div>
+                        <div class="contenidoTarjetaConocenos">
+                            <h3>Profesionalidad</h3>
+                            <p>Nuestro equipo cuenta con más de 20 años de experiencia en el sector de la informática, y 15 años con nuestra propia marca realizando todo tipo de proyectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenedorConocenos aparecer" id="contenedorConocenos3">
+                    <div class="tarjetaConocenos">
+                        <div class="imgConocenos">
+                            <img src="img/servicio.svg">
+                        </div>
+                        <div class="contenidoTarjetaConocenos">
+                            <h3>Servicio</h3>
+                            <p>Si se puede nosotros lo conseguiremos. Somos un equipo resolutivo y tenaz, unas cualidades imprescindibles a la hora de materializar cualquier proyecto.</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <!-- Carrusel de imagenes -->
+        <div class="carrusel">
+            <button class="carruselBoton izquierda">&#10094;</button>
+            
+            <div class="carruselImagenes">
+              <img src="img/macsoporte1.png" class="carruselImagen activa">
+              <img src="img/macsoporte2.png" class="carruselImagen">
+              <img src="img/macsoporte3.png" class="carruselImagen">
+              <img src="img/macsoporte4.png" class="carruselImagen">
+              <img src="img/macsoporte5.png" class="carruselImagen">
+            </div>
+            
+            <button class="carruselBoton derecha">&#10095;</button>
+        </div>
+
+        <!-- Seccion de Servicios de la empresa -->
+        <section class="contenedorServicios" id="contenedorServicios">
+            <div class="contenedorTituloServicios">
+                <h2 class="tituloServicios">¿Que te ofrece <bold>Mac Soporte</bold>?</h2>
+            </div>
+
+            <section class="contenedorTarjetasServicios">
+                <div class="tarjetaServicios">
+                    <div class="imgServicios">
+                        <img src="img/soporteTecnico.png">
+                    </div>
+                    <div class="textoServicios">
+                        <h3>Servicio Técnico de Reparación</h3>
+                        <p>Disponemos de un equipo de expertos en nuestro laboratorio capacitado para diagnosticar y solucionar problemas en el funcionamiento de hardware y software de tu equipo.<br><br>
+                            Nos comprometemos a realizar una reparaciónes de alta calidad con una<br> atención profesional, cuéntanos que le ocurre a tu dispositivo y tras un diagnóstico gratuito te daremos la solución adecuada para repararlo.
+                        </p>
+                        <button class="botonServicioTecnico" id="botonServicioTecnico">Quiero reparar un dispositivo</button>
+                    </div>
+                </div>
+
+                <div class="tarjetaServicios tarjetaServiciosInverso">
+                    <div class="imgServicios">
+                        <img src="img/asistenciaRemota.png">
+                    </div>
+                    <div class="textoServicios" id="textoServiciosDos">
+                        <h3>Asistencia Remota</h3>
+                        <p>En Mac Soporte te ofrecemos una asistencia remota rápida y eficaz para la resolución de incidencias con sus ordenadores Apple o Pc siempre que sea posible para su mayor comodidad, 
+                            tratando así de que tu incidencia sea resuelta lo más rapido posible.
+                        </p>
+                        <button class="botonServicioTecnico" id="botonServicioTecnico">Contáctanos</button>
+                    </div>
+                </div>
+
+                <div class="tarjetaServicios">
+                    <div class="imgServicios">
+                        <img src="img/gestionProyectos.jpg">
+                    </div>
+                    <div class="textoServicios">
+                        <h3>Gestión de Proyectos</h3>
+                        <p>Gracias al equipo profesional de Mac Soporte cuentas con la opción de que gestionemos sus proyectos por usted, ayudando le a plantear todos los pasos y procesos a realizar para alcanzar los objetivos estipulados.<br><br>
+                            Llevamos desde el proyecto personal de montaje y preparación de tu ordenador personal hasta el trabajo de planteamiento, control y mantenimiento de poroyectos empresariales mas grandes con el montaje y preparación de una red de multiples ordenadores.
+                        </p>
+                        <button class="botonServicioTecnico" id="botonServicioTecnico">Cuentanos tu proyecto</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Seccion de mapa -->
+        <section class="contenedorMapa">
+            <div class="informacionMapa">
+                <h2>¡Ven a visitarnos!</h2>
+                <p class="infoMapaUno">En nuestra tienda podremos darle el trato que se merece, revisaremos su caso gratuitamente, le plantearemos y ofreceremos un presupuesto del procedimiento mas rápido y efectivo a seguir con el problema de su dispositivo electrónico.</p>
+                <p class="infoMapaDos">¡Te esperamos!</p>
+            </div>
+            <div class="mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6395.466839809906!2d-4.4170641!3d36.7289631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7c711baaaab%3A0xa6ab3ee3108b18f2!2sMac%20Soporte%20S.L.%20(Servicio%20Tecnico%20Apple.%20Reparacion%20de%20Ordenadores%20PC%20y%20Mac%20en%20M%C3%A1laga)!5e0!3m2!1ses!2ses!4v1744733675041!5m2!1ses!2ses" 
+                    width="400" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contenedor que carga el footer almacenado en su js -->
+    <div id="contenedorFooter"></div>
+
+    <script src="js/footer.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/carrusel.js"></script>
+</body>
+</html>
