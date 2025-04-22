@@ -10,6 +10,7 @@
 
 body {
     font-family: "monserrat";
+    overflow-x: hidden;
 }
 
 html {
@@ -81,6 +82,7 @@ footer p {
 /* Diseño para la imagen de portada y texto */
 .portada {
     position: relative;
+    height: 98vh;
 }
 
 .textoPortada {
@@ -188,7 +190,6 @@ footer p {
     flex-direction: column;
     margin-bottom: 60px;
 }
-
 
 .imgConocenos img {
     width: 100px;
@@ -397,4 +398,85 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.contenedorGeneralTienda {
+    background-color: #efefef;
+}
+
+.contenedorTituloTienda {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.contenedorTituloTienda p {
+    font-size: 18px;
+}
+
+.contenedorTarjetasTienda {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedorTienda {
+    display: flex;
+}
+
+.tituloTienda {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: rgb(0, 83, 249);
+    font-weight: bold;
+}
+
+.tarjetaTienda {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.imgTienda img {
+    width: 90%;
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    margin-left: 5%;
+}
+
+.contenidoTarjetaTienda p {
+    font-size: 14px;
+    color: rgb(93, 93, 93);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+} 
+
+.botonCarrito {
+    background-color: orange;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.botonCarrito:hover {
+    background-color: rgb(231, 150, 0);
+}
+
+.botonCarrito:active {
+    transform: scale(0.95) !important;
 }
