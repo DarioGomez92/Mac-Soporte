@@ -82,13 +82,14 @@ footer p {
 /* Diseño para la imagen de portada y texto */
 .portada {
     position: relative;
-    height: 98vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .textoPortada {
     position: absolute;
-    top: 30%;
-    left: 19%;
     z-index: 2;
 }
 
@@ -113,13 +114,13 @@ footer p {
 .tituloDos {
     font-size: 30px;
     color: rgb(255, 255, 255);
-    max-width: 650px;
+    max-width: 1200px;
     margin-bottom: 20px;
 }
 
 .tituloTres {
     color: rgb(255, 255, 255);
-    max-width: 650px;
+    max-width: 1200px;
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -135,6 +136,7 @@ footer p {
     cursor: pointer;
     transition: background-color 0.5s ease, transform 0.3s ease;
     text-decoration: none;
+    display: inline-block;
 }
 
 .botonPortada:hover {
@@ -146,7 +148,7 @@ footer p {
 }
 
 #contenedorTituloConocenos {
-    scroll-margin-top: 130px;
+    scroll-margin-top: 125px;
 }
 
 /* Código sección de Conocenos */
@@ -360,14 +362,12 @@ footer p {
 }
 
 .infoMapaUno {
-    /* text-align: center; */
     font-size: 20px;
     margin-top: 20px;
     color: rgb(93, 93, 93);
 }
 
 .infoMapaDos {
-    /* text-align: end; */
     margin-top: 30px;
     color: rgb(67, 67, 67);
     font-weight: bold;
@@ -383,7 +383,7 @@ footer p {
     margin-right: 30px;
 }
 
-/* Animacion de aparicion desde abajo hacia arriba */
+/* Animaciones de aparicion */
 .aparecer {
     animation: animacionAparecer 1s ease-in-out forwards;
     opacity: 0;
@@ -400,8 +400,45 @@ footer p {
     }
 }
 
+.aparecerIzquierda {
+    animation: animacionIzquierda 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes animacionIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.aparecerDerecha {
+    animation: animacionDerecha 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes animacionDerecha {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Codigo para la pagina de la tienda online */
 .contenedorGeneralTienda {
     background-color: #efefef;
+}
+
+#contenedorGeneralTienda {
+    scroll-margin-top: 84px;
 }
 
 .contenedorTituloTienda {
@@ -440,7 +477,18 @@ footer p {
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.seccionTienda {
+    padding-bottom: 50px;
+}
+
+.contenidoPrincipalTarjeta {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -453,13 +501,20 @@ footer p {
     margin-left: 5%;
 }
 
-.contenidoTarjetaTienda p {
+.contenidoTarjetaTienda {
     font-size: 14px;
     color: rgb(93, 93, 93);
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 15px;
 } 
+
+.precio {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
 
 .botonCarrito {
     background-color: orange;
@@ -478,5 +533,33 @@ footer p {
 }
 
 .botonCarrito:active {
+    transform: scale(0.95) !important;
+}
+
+.contenedorBotonesTienda {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+.botonCategoria {
+    background-color: rgb(126, 169, 255);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonCategoria:hover {
+    background-color: rgb(0, 83, 249);
+}
+
+.botonCategoria:active {
     transform: scale(0.95) !important;
 }
