@@ -21,7 +21,7 @@ function cargarNav() {
                             <a class="tienda" href="tienda.html" id="tienda">Tienda</a>
                         </li>
                         <li>
-                            <a class="reparaciones" id="reparaciones">Reparaciones</a>
+                            <a class="reparaciones" href="reparaciones.html" id="reparaciones">Reparaciones</a>
                         </li>
                         <li>
                             <a class="contacto" id="contacto">Contacto</a>
