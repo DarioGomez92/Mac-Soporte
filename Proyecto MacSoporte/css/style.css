@@ -625,6 +625,11 @@ footer p {
     background-color: rgb(0, 83, 249);
 }
 
+.botonEnviar:active {
+    transform: scale(0.95) !important;
+}
+
+
 /* Codigo para la pagina de reparaciones */
 .contenedorGeneralReparaciones {
     display: flex;
