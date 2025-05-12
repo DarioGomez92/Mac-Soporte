@@ -677,3 +677,98 @@ footer p {
     transform: scale(0.95) !important;
 }
 
+/* Codigo para el modal emergente de registro/loggin */
+.modalUsuario {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.contenidoModal {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    gap: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.formularioUsuario {
+    width: 50%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.formulario input, .formulario button {
+    margin-bottom: 1rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario button {
+    background-color: #0053f9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #003ecb;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: red;
+}
+
+.botonUsuario {
+    padding: 0.5rem 1rem;
+    background-color: #0053f9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.botonUsuario:hover {
+    background-color: #003ecb;
+}
+
+.oculto {
+    display: none;
+}
