@@ -565,6 +565,66 @@ footer p {
     transform: scale(0.95) !important;
 }
 
+/* Codigo para la pagina de contacto */
+.contenedorContacto {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 600px;
+    width: 90%;
+}
+
+.formularioContacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.formularioContacto label {
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #444;
+}
+
+.formularioContacto input, .formularioContacto textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.botonEnviar {
+    background-color: rgb(126, 169, 255);
+    width: 50%;
+    margin-left: 25%;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonEnviar:hover {
+    background-color: rgb(0, 83, 249);
+}
+
 /* Codigo para la pagina de reparaciones */
 .contenedorGeneralReparaciones {
     display: flex;
@@ -611,3 +671,4 @@ footer p {
 .botonContactoReparacion:active {
     transform: scale(0.95) !important;
 }
+

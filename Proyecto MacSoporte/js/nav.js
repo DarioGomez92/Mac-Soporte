@@ -24,7 +24,7 @@ function cargarNav() {
                             <a class="reparaciones" href="reparaciones.html" id="reparaciones">Reparaciones</a>
                         </li>
                         <li>
-                            <a class="contacto" id="contacto">Contacto</a>
+                            <a class="contacto" href="contacto.html" id="contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>
