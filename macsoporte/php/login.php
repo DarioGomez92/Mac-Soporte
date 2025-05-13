@@ -1,10 +1,10 @@
 <?php
-session_start(); // Iniciar sesión
+session_start();
 
 // Conexión a la base de datos
 $conexion = new mysqli("localhost", "root", "", "macsoporte_db");
 
-// Verificar conexión
+// Verificar la conexión
 if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
@@ -18,6 +18,8 @@ $sql = "SELECT id, nombre_completo, usuario, correo, contraseña FROM usuarios
         WHERE usuario = '$usuario' OR correo = '$usuario' LIMIT 1";
 $resultado = $conexion->query($sql);
 
+$response = [];
+
 if ($resultado->num_rows == 1) {
     $fila = $resultado->fetch_assoc();
 
@@ -28,16 +30,24 @@ if ($resultado->num_rows == 1) {
         $_SESSION['usuario'] = $fila['usuario'];
         $_SESSION['nombre_completo'] = $fila['nombre_completo'];
 
-        echo "Inicio de sesión exitoso.";
-        // Puedes redirigir a la zona privada si quieres:
-        // header("Location: cliente.php");
-        // exit();
+        // Responder con un JSON indicando éxito
+        $response['status'] = 'success';
+        $response['message'] = 'Inicio de sesión exitoso';
     } else {
-        echo "Contraseña incorrecta.";
+        // Contraseña incorrecta
+        $response['status'] = 'error';
+        $response['message'] = 'Contraseña incorrecta.';
     }
 } else {
-    echo "Usuario o correo no encontrados.";
+    // Usuario no encontrado
+    $response['status'] = 'error';
+    $response['message'] = 'Usuario o correo no encontrados.';
 }
 
+echo json_encode($response);
 $conexion->close();
 ?>
+
+
+
+

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Mac Soporte</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Contenedor que carga el navegador almacenado en el js -->
+    <div id="contenedorNavegador"></div>
+
+    <main>
+        <section class="contenedorPortada" id="contenedorPortada">
+            <div class="portada" id="portada">
+                <div class="capaOscura" id="capaOscura"></div>
+                
+                <img src="img/tienda.jpg">
+
+                <div class="textoPortada aparecer" id="textoPortada">
+                    <h1 class="tituloUno" id="tituloUno"><bold><em><span style="color:rgb(0, 83, 249)">Mac</span><span style="color:rgb(176, 3, 3)"> Soporte</span></em></bold></h1>
+                    <h2 class="tituloDos" id="tituloDos">Tu tienda de tecnología online</h2>
+                    <h2 class="tituloTres" id="tituloTres">En nuestra tienda online encontraras todo lo que necesitas para llevar a otro nivel tu experiencia con los ordenadores mediante un proceso claro, rapido y sencillo.
+                        <br><br>Te ofrecemos en nuestra tienda online un amplio catálogo de hardware, perifericos, accesorios, figuras y todo lo que necesites para consegir mejorar tu experiencia y cubrir todas tus necesidades.
+                    </h2>
+                    <a class="botonPortada aparecer" id="botonPortada" href="#contenedorGeneralTienda">¡Comienza a comprar ya!</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contenedorGeneralTienda" id="contenedorGeneralTienda">
+            <div class="contenedorBotonesTienda">
+                <button class="botonCategoria" id="botonHardware">Hardware</button>
+                <button class="botonCategoria" id="botonPerifericos">Periféricos</button>
+                <button class="botonCategoria" id="botonAccesorios">Accesorios</button>
+                <button class="botonCategoria" id="botonFiguras">Figuras</button>
+                <button class="botonCategoria" id="botonTodo">Todo</button>
+            </div>
+            <div class="seccionTienda" id="hardware">
+                <div class="contenedorTarjetasTienda">
+                    <div class="contenedorTienda aparecer" id="contenedorTienda1">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/tarjetagrafica4060.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Gigabyte NVIDIA GeForce RTX 4060 WINDFORCE OC Targeta gráfica - 8GB GDDR6, 128-bit, PCI-E 4.0, 2475MHz Core Clock, 2x DP 1.4, 2x HDMI 2.1a, NVIDIA DLSS 3 - GV-N4060WF2OC-8GD</p>
+                                <p class="precio">329'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito1">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda2">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/nvidia5070.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Gigabyte GeForce RTX 5070 Ti WINDFORCE OC SFF 16G Tarjeta Gráfica - 16GB GDDR7, 256 bits, PCI-E 5.0, 2497 MHz Core Clock, 3 x DP 2.1a, 1 x HDMI 2.1b, NVIDIA DLSS 4, GV-N507TWF3OC-16GD</p>
+                                <p class="precio">999'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito2">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda3">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/asus5070.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">ASUS TUF Gaming GeForce RTX 5070 12GB GDDR7 OC Edition - Tarjeta gráfica Gaming (PCIe 5.0, HDMI/DP 2.1, 3.125 Ranuras, componentes de Grado Militar, Revestimiento PCB, Ventiladores axial-Tech)</p>
+                                <p class="precio">849'00€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda4">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/asus7600.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">ASUS Dual Radeon RX 7600 EVO OC Edition - Tarjeta gráfica para Videojuegos (AMD Radeon RX7600, PCIe 4.0, 1 HDMI 2.1, 3 DisplayPort 1.4a, DUAL-RX7600-O8G-EVO)</p>
+                                <p class="precio">304'23€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito4">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda5">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/cpuamd.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">AMD Ryzen 7 9700X Procesador (8 núcleos/16 Threads) 65W DTP, Socket AM5, 40MB Caché, Reloj de Aumento máx. hasta 5.5 GHz, sin Ventilador</p>
+                                <p class="precio">329'95€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito5">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda6">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/i9.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Intel® Core™ Ultra 9 procesador para Equipos de sobremesa 285K 24 núcleos (8 P-Cores + 16 E-Cores) hasta 5,7 GHz</p>
+                                <p class="precio">642'38€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito6">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda7">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/placabasemsi.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">MSI X870 Gaming Plus WiFi Placa Base ATX - Procesador AMD Ryzen 9000/8000 / 7000, AM5-60A SPS VRM, DDR5 Memory Boost 8200+ MT/s (OC), PCIe 5.0 x16 & 4.0 x16, M.2 Gen5, Wi-Fi 7, 5G LAN</p>
+                                <p class="precio">268'90€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito7">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda8">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/placabasegigabyte.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">GIGABYTE MB GBT Intel 1700 B760M DS3H DDR4</p>
+                                <p class="precio">97'95€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito8">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda9">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/placabaseasus.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">ASUS Rog Strix B550-A Gaming - Placa Base de Gaming ATX AM4 AMD B550 Ryzen (PCIE 4.0, etapas de Potencia agrupadas, Intel 2.5Gb Ethernet, Dos M.2 con disipadores, SATA 6 Gbps, Aura Sync RGB)</p>
+                                <p class="precio">175'63€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito9">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda10">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/discoduronas.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">WD Red Pro 4TB NAS Disco Duro Interno 3,5" – 7200 RPM Clase, SATA 6Gb/s, CMR, 512MB Caché</p>
+                                <p class="precio">142'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito10">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda11">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/discodurokingston.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Kingston A400 SSD Disco duro sólido interno 2.5" SATA Rev 3.0, 480GB - SA400S37/480G</p>
+                                <p class="precio">39'63€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito11">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda12">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/discodurokingspec.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Kingspec SSD 512GB 2,5" SATA III SSD, TLC 3D NAND Flash Disco Duro SSD 512GB Interno Lectura de hasta 570 MB/s, para escritorios/computadoras portátiles/Todo en uno</p>
+                                <p class="precio">31'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito12">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda13">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/ramcorsair.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">CORSAIR VENGEANCE DDR5 32GB (2x16GB) DDR5 6000MHz CL30 AMD EXPO Intel XMP iCUE Memoria de Ordenador Compatible - Gris (CMK32GX5M2B6000Z30)</p>
+                                <p class="precio">119'95€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito13">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda14">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/ramkingstom.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Kingston FURY Beast Negro RGB EXPO 16GB 6000MT/s DDR5 CL30 DIMM Memoria gamer para Ordenadores de sobremesa Kit de 2 - KF560C30BBEAK2-16</p>
+                                <p class="precio">95'80€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito14">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda15">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/ramviper.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Patriot Memory Viper Venom Kit de Memoria Alto Rendimiento DDR5 RAM 16GB (2 x 8GB) 5600MHz CL40</p>
+                                <p class="precio">118'36€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito15">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda16">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/fuentemars.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">MARS GAMING MPIII550P, Fuente Alimentación PC ATX 550W, 5 Años de Garantía, 85% Eficiencia, Sistema Digital APFC, Ventilador FDB 120mm AI-RPM, Tecnol</p>
+                                <p class="precio">26'27€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito16">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda17">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/fuentetacens.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">TACENS ANIMA APIII500, Fuente Alimentación PC ATX 500W, Tecnología SMD 85% Bronze 12V, Ventilador Ultra-silencioso 12cm, Negro</p>
+                                <p class="precio">17'90€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito17">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda18">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/cooler.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Thermalright Assassin King 120 SE ARGB CPU Air Cooler, AK120 SE ARGB, 5 Heatpipes, Tecnología AGHP, TL-C12CW-S PWM Quiet Fan CPU Cooler con rodamiento S-FDB, para AMD AM4 AM5/Intel 1151/1155/1200/1700</p>
+                                <p class="precio">19'90€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito18">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="seccionTienda" id="perifericos">
+                <div class="contenedorTarjetasTienda">
+                    <div class="contenedorTienda aparecer" id="contenedorTienda19">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/tecladomsi.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">MSI Forge GK310 - Teclado mecánico para Gaming Red SWITCHES - Interruptores mecánicos Rojos (lineales), Teclas ergonómicas, Base Antideslizante, LED RGB, USB 2.0 - Tamaño estándar</p>
+                                <p class="precio">60'65€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito19">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda20">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/tecladotrust.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Trust Gaming GXT 835 Azor Teclado Retroiluminado, Disposición QWERTY Español, LED Iluminación, Teclado Alámbrico Gaming para Windows, Mac, PC, Ordenador, Portátil - Negro</p>
+                                <p class="precio">19'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito20">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda21">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/ratonv3.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Razer Basilisk V3 - Ratón para Juegos Personalizable con Cable (10+1 Botones Programables, Rueda Inclinable Hyperscroll, 11 Zonas De Iluminación, Interruptores Ópticos de Ratón, Sensor Óptico) Negro</p>
+                                <p class="precio">54'96€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito21">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda22">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/ratonlogited.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Logitech G402 Hyperion Fury Ratón USB Gaming con Cable, Seguimento Óptico 4,000 DPI, Peso Reducido, 8 Botones Programables, PC/Mac - Negro</p>
+                                <p class="precio">29'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito22">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda23">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/cascoslogited.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Logitech G432 Auriculares Gaming con Cable, Sonido 7.1 Surround DTS:X 2.0, Transductores 50mm USB y Jack Audio 3.5mm, Micrófono Volteable, Peso Ligero, PC/Mac/Xbox One/PS4/Switch- Azul/Negro</p>
+                                <p class="precio">56'14€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito23">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda24">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/cascosrazer.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Razer Kraken V3 X USB - Auriculares para Juegos con Cable USB (Ultraligero de 285g, Diafragmas de 40mm Triforce, Micrófono cardioide HyperClear, Sonido Envolvente 7.1, Chroma RGB) Negro</p>
+                                <p class="precio">72'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito24">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="seccionTienda" id="accesorios">
+                <div class="contenedorTarjetasTienda">
+                    <div class="contenedorTienda aparecer" id="contenedorTienda25">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/soportePortatil.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Babacom Soporte Portatil Mesa 5 Ángulos Adjustable, Aleación de Aluminio, Refrigeración Soporte Ordenador Portátil, Plegable Soporte para Portatil, para Macbook, PC y Otro 10-15.6” Portatiles</p>
+                                <p class="precio">14'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito25">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda26">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/soporteTorre.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Moricher Soporte de torre para computadora, altura ajustable, 2 niveles, ATX, soporte de PC para impresora de piso, tablero de clavijas con ruedas giratorias y alfombrilla de mouse</p>
+                                <p class="precio">95'98€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito26">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda27">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/conectores.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Mejora 2025 Lemorele Docking Station USB C 3*Display-13 en 1,2 HDMI 4K, Ethernet,5USB 3.2/2.0, VGA,3.2USB-C 10Gbps, PD 100W, Audio, SD/TF, Hub USB C/Docking Station for MacBook/DELL/Windows/HP/Surface</p>
+                                <p class="precio">38'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito27">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda28">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/alfombrillanegra.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">ADM PASS GROUP - Alfombrilla para Ratón XL, Mousepad XXL 80 x30 Cm Alfombra Gaming Base de Goma Antideslizante PC Tapete con Microfibras, Accesorios de Oficina. (80cm x 30cm)</p>
+                                <p class="precio">11'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito28">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda29">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/alfombrillargb.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Realky Alfombrilla de Ratón RGB, 800×300mmTapete de Juego Extra Grande, Alfombrilla Raton LED 14 Efectos de Iluminación Impermeable Antideslizante, Alfombrilla Ratón Gaming para Gamers, PC y Portátil</p>
+                                <p class="precio">18'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito29">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda30">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/alfombrillablanca.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Yimomoyi Alfombrilla Ratón, XXL 800 x 300 mm Mouse Pad Grande Gaming, Alfombrilla Antideslizante,Tapete Escritorio con Bordes Cosidos, Desk Mat para Jugadores, PC, Oficina</p>
+                                <p class="precio">11'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito30">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="seccionTienda" id="figuras">
+                <div class="contenedorTarjetasTienda">
+                    <div class="contenedorTienda aparecer" id="contenedorTienda31">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/deadpool.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Funko Pop! Marvel: Deadpool & Wolverine - Deadpool - Figura de Vinilo Coleccionable - Idea de Regalo- Mercancia Oficial - Juguetes para Niños y Adultos - Movies Fans - Muñeco para Coleccionistas</p>
+                                <p class="precio">15'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito31">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda32">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/goku.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Funko Pop! Animation: Dragon Ball - Goku - (Kame) - Figura de Vinilo Coleccionable - Idea de Regalo - Mercancia Oficial - Juguetes para Niños y Adultos - Anime Fans - Muñeco para Coleccionistas</p>
+                                <p class="precio">16'00€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito32">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda33">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/rengoku.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Pop! Premium: DS - Rengoku 9th Form</p>
+                                <p class="precio">18'00€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito33">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda34">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/nazgul.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Funko Pop! Movies: Lord of The Rings S8 - Nazgul - el Señor de los Anillos - Figura de Vinilo Coleccionable - Idea de Regalo - Mercancia Oficial - Juguetes para Niños y Adultos - Movies Fans</p>
+                                <p class="precio">16'00€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito34">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda35">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/charizard.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Funko POP! Games: Pokemon - Charizard - Figuras Miniaturas Coleccionables Para Exhibición - Idea De Regalo - Mercancía Oficial - Juguetes Para Niños Y Adultos - Fans De Video Games</p>
+                                <p class="precio">12'49€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito35">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedorTienda aparecer" id="contenedorTienda36">
+                        <div class="tarjetaTienda">
+                            <div class="imgTienda">
+                                <img src="img/stich.png">
+                            </div>
+                            <div class="contenidoPrincipalTarjeta">
+                                <p class="contenidoTarjetaTienda">Funko Pop! Disney: Stitch with Ukulele - Lilo and Stitch - Figura de Vinilo Coleccionable - Idea de Regalo- Mercancia Oficial - Juguetes para Niños y Adultos - Movies Fans</p>
+                                <p class="precio">15'99€</p>
+                            </div>
+                            <div>
+                                <button class="botonCarrito" id="botonCarrito36">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contenedor que carga el footer almacenado en su js -->
+    <div id="contenedorFooter"></div>
+
+    <script src="js/filtroTienda.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>
