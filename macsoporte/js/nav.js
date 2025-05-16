@@ -3,7 +3,7 @@ function cargarNav() {
     if (window.location.protocol === 'file:') {
         document.getElementById("contenedorNavegador").innerHTML = `
             <header class="header">
-                <div class="contenedorNavegador" id="contenedorNavegador">
+                <div class="contenedorNavegador">
                     <nav class="navegador" id="navegador">
                         <div class="contenedorLogo" id="contenedorLogo">
                             <img src="img/logo.png">
