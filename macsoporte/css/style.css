@@ -11,9 +11,12 @@
 body {
     font-family: "monserrat";
     overflow-x: hidden;
+    height: 100%;
+    min-height: 100vh;
 }
 
 html {
+    height: 100%;
     scroll-behavior: smooth;
 }
 
@@ -36,6 +39,21 @@ footer p {
     font-weight: bold;
     color: white;
     font-size: 20px;
+}
+
+.paginaCliente footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(169, 198, 255);
+  padding: 50px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* Diseño para el navegador */
@@ -856,6 +874,137 @@ footer p {
     color: red;
 }
 
+/* Estilos para el diseño del area de cliente */
+.clienteArea {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 10px;
+}
+
+.clienteArea h1 {
+    margin-top: 120px;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.datosCliente {
+    margin-bottom: 40px;
+    background: #f9f9f9;
+    padding: 20px 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.datosCliente h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.datosCliente ul {
+    list-style: none;
+    padding: 0;
+}
+
+.datosCliente ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.datosCliente strong {
+    color: #555;
+}
+
+.historialCompras {
+    margin-bottom: 40px;
+}
+
+.historialCompras h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.historialCompras table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.historialCompras th, .historialCompras td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #444;
+}
+
+.historialCompras th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.historialCompras tr:last-child td {
+    border-bottom: none;
+}
+
+.historialCompras p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.historialMensajes {
+    margin-bottom: 30px;
+}
+
+.historialMensajes h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.historialMensajes ul {
+    list-style: none;
+    padding-left: 0;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.historialMensajes ul li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #444;
+}
+
+.historialMensajes ul li:last-child {
+    border-bottom: none;
+}
+
+.historialMensajes time {
+    font-weight: 600;
+    color: #555;
+    margin-right: 10px;
+}
+
+.historialMensajes p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contenedorClientes {
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
 
 /* Ocultar el modal por defecto */
 .oculto {
