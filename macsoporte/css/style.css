@@ -474,7 +474,7 @@ footer p {
 
 .tarjetaTienda {
     display: flex;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     flex-direction: column;
@@ -629,7 +629,6 @@ footer p {
     transform: scale(0.95) !important;
 }
 
-
 /* Codigo para la pagina de reparaciones */
 .contenedorGeneralReparaciones {
     display: flex;
@@ -698,10 +697,10 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 32px;
     border-radius: 10px;
     position: relative;
-    gap: 2rem;
+    gap: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -709,35 +708,41 @@ footer p {
     width: 50%;
 }
 
-.formulario {
+.formularioModal {
     display: flex;
     flex-direction: column;
 }
 
-.formulario h2 {
-    margin-bottom: 1rem;
+.formularioModal h2 {
+    margin-bottom: 16px;
     color: #333;
     text-align: center;
 }
 
-.formulario input, .formulario button {
-    margin-bottom: 1rem;
-    padding: 0.6rem;
-    font-size: 1rem;
+.formularioModal input, .formularioModal button {
+    margin-bottom: 16px;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.formulario button {
-    background-color: #0053f9;
+.formularioModal button {
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgb(126, 169, 255);
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.formulario button:hover {
-    background-color: #003ecb;
+.formularioModal button:hover {
+    background-color: rgb(0, 83, 249);
+}
+
+.formularioModal button:active {
+    transform: scale(0.95) !important;
 }
 
 .cerrar {
@@ -746,29 +751,113 @@ footer p {
     right: 20px;
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: #959595;
     cursor: pointer;
 }
 
 .cerrar:hover {
-    color: red;
+    color: rgb(78, 78, 78);
 }
 
-.botonUsuario {
-    padding: 0.5rem 1rem;
-    background-color: #0053f9;
+.enlaceRecuperar {
+    font-size: 14px;
+    color: #0066cc;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.enlaceRecuperar:hover {
+    text-decoration: underline;
+}
+
+ /* Estilos para el modal de recuperación */
+.modalRecuperar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#modalRecuperar .contenidoModal {
+    max-width: 500px; 
+    width: 90%;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 32px;
+    gap: 16px;
+}
+
+.formularioUsuarioRecuperar {
+    width: 50%;
+}
+
+.formularioModalRecuperar {
+    display: flex;
+    flex-direction: column;
+}
+
+.formularioModalRecuperar h2 {
+    margin-bottom: 16px;
+    color: #333;
+    text-align: center;
+}
+
+#modalRecuperar .formularioModal p {
+    margin-bottom: 16px !important;
+}
+
+.formularioModalRecuperar input, .formularioModalRecuperar button {
+    margin-bottom: 16px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formularioModalRecuperar button {
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgb(126, 169, 255);
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.botonUsuario:hover {
-    background-color: #003ecb;
+.formularioModalRecuperar button:hover {
+    background-color: rgb(0, 83, 249);
 }
 
+.formularioModalRecuperar button:active {
+    transform: scale(0.95) !important;
+}
+
+/* Mensajes de exito o no para el formulario de recuperacion de contraseña */
+.mensajeRecuperacion {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.mensajeRecuperacion.exito {
+    color: green;
+}
+
+.mensajeRecuperacion:not(.exito) {
+    color: red;
+}
+
+
+/* Ocultar el modal por defecto */
 .oculto {
     display: none;
 }
