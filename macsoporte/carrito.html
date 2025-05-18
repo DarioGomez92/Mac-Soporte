@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="paginaCarrito">
+    <!-- Contenedor que carga el navegador almacenado en el js -->
+    <div id="contenedorNavegador"></div>
+
+  <h1 class="tituloCarrito">Carrito de Compras</h1>
+  <div id="carritoVacio">Tu carrito está vacío.</div>
+  <table id="tablaCarrito" style="display: none;">
+    <thead>
+      <tr>
+        <th>PRODUCTO</th>
+        <th>PRECIO</th>
+        <th>CANTIDAD</th>
+        <th>SUBTOTAL</th>
+        <th>BORRAR</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpoTabla"></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="total">Total</td>
+        <td colspan="2" class="total" id="totalCarrito">0 €</td>
+      </tr>
+    </tfoot>
+  </table>
+
+    <!-- Contenedor que carga el footer almacenado en su js -->
+    <div id="contenedorFooter"></div>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>

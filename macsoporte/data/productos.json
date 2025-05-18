@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "nombre": "Gigabyte NVIDIA GeForce RTX 4060 WINDFORCE OC Targeta gráfica - 8GB GDDR6, 128-bit, PCI-E 4.0, 2475MHz Core Clock, 2x DP 1.4, 2x HDMI 2.1a, NVIDIA DLSS 3 - GV-N4060WF2OC-8GD",
+    "precio": "329,99€",
+    "imagen": "img/tarjetagrafica4060.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 2,
+    "nombre": "Gigabyte GeForce RTX 5070 Ti WINDFORCE OC SFF 16G Tarjeta Gráfica - 16GB GDDR7, 256 bits, PCI-E 5.0, 2497 MHz Core Clock, 3 x DP 2.1a, 1 x HDMI 2.1b, NVIDIA DLSS 4, GV-N507TWF3OC-16GD",
+    "precio": "999,99€",
+    "imagen": "img/nvidia5070.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 3,
+    "nombre": "ASUS TUF Gaming GeForce RTX 5070 12GB GDDR7 OC Edition - Tarjeta gráfica Gaming (PCIe 5.0, HDMI/DP 2.1, 3.125 Ranuras, componentes de Grado Militar, Revestimiento PCB, Ventiladores axial-Tech)",
+    "precio": "849,00€",
+    "imagen": "img/asus5070.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 4,
+    "nombre": "ASUS Dual Radeon RX 7600 EVO OC Edition - Tarjeta gráfica para Videojuegos (AMD Radeon RX7600, PCIe 4.0, 1 HDMI 2.1, 3 DisplayPort 1.4a, DUAL-RX7600-O8G-EVO)",
+    "precio": "304,23€",
+    "imagen": "img/asus7600.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 5,
+    "nombre": "AMD Ryzen 7 9700X Procesador (8 núcleos/16 Threads) 65W DTP, Socket AM5, 40MB Caché, Reloj de Aumento máx. hasta 5.5 GHz, sin Ventilador",
+    "precio": "329,95€",
+    "imagen": "img/cpuamd.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 6,
+    "nombre": "Intel® Core™ Ultra 9 procesador para Equipos de sobremesa 285K 24 núcleos (8 P-Cores + 16 E-Cores) hasta 5,7 GHz",
+    "precio": "642,38€",
+    "imagen": "img/i9.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 7,
+    "nombre": "MSI X870 Gaming Plus WiFi Placa Base ATX - Procesador AMD Ryzen 9000/8000 / 7000, AM5-60A SPS VRM, DDR5 Memory Boost 8200+ MT/s (OC), PCIe 5.0 x16 & 4.0 x16, M.2 Gen5, Wi-Fi 7, 5G LAN",
+    "precio": "268,90€",
+    "imagen": "img/placabasemsi.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 8,
+    "nombre": "GIGABYTE MB GBT Intel 1700 B760M DS3H DDR4",
+    "precio": "97,95€",
+    "imagen": "img/placabasegigabyte.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 9,
+    "nombre": "ASUS Rog Strix B550-A Gaming - Placa Base de Gaming ATX AM4 AMD B550 Ryzen (PCIE 4.0, etapas de Potencia agrupadas, Intel 2.5Gb Ethernet, Dos M.2 con disipadores, SATA 6 Gbps, Aura Sync RGB)",
+    "precio": "175,63€",
+    "imagen": "img/placabaseasus.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 10,
+    "nombre": "WD Red Pro 4TB NAS Disco Duro Interno 3,5\" – 7200 RPM Clase, SATA 6Gb/s, CMR, 512MB Caché",
+    "precio": "142,99€",
+    "imagen": "img/discoduronas.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 11,
+    "nombre": "Kingston A400 SSD Disco duro sólido interno 2.5\" SATA Rev 3.0, 480GB - SA400S37/480G",
+    "precio": "39,63€",
+    "imagen": "img/discodurokingston.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 12,
+    "nombre": "Kingspec SSD 512GB 2,5\" SATA III SSD, TLC 3D NAND Flash Disco Duro SSD 512GB Interno Lectura de hasta 570 MB/s, para escritorios/computadoras portátiles/Todo en uno",
+    "precio": "31,99€",
+    "imagen": "img/discodurokingspec.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 13,
+    "nombre": "CORSAIR VENGEANCE DDR5 32GB (2x16GB) DDR5 6000MHz CL30 AMD EXPO Intel XMP iCUE Memoria de Ordenador Compatible - Gris (CMK32GX5M2B6000Z30)",
+    "precio": "119,95€",
+    "imagen": "img/ramcorsair.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 14,
+    "nombre": "Kingston FURY Beast Negro RGB EXPO 16GB 6000MT/s DDR5 CL30 DIMM Memoria gamer para Ordenadores de sobremesa Kit de 2 - KF560C30BBEAK2-16",
+    "precio": "95,80€",
+    "imagen": "img/ramkingstom.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 15,
+    "nombre": "Patriot Memory Viper Venom Kit de Memoria Alto Rendimiento DDR5 RAM 16GB (2 x 8GB) 5600MHz CL40",
+    "precio": "118,36€",
+    "imagen": "img/ramviper.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 16,
+    "nombre": "MARS GAMING MPIII550P, Fuente Alimentación PC ATX 550W, 5 Años de Garantía, 85% Eficiencia, Sistema Digital APFC, Ventilador FDB 120mm AI-RPM, Tecnol",
+    "precio": "26,27€",
+    "imagen": "img/fuentemars.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 17,
+    "nombre": "TACENS ANIMA APIII500, Fuente Alimentación PC ATX 500W, Tecnología SMD 85% Bronze 12V, Ventilador Ultra-silencioso 12cm, Negro",
+    "precio": "17,90€",
+    "imagen": "img/fuentetacens.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 18,
+    "nombre": "Thermalright Assassin King 120 SE ARGB CPU Air Cooler, AK120 SE ARGB, 5 Heatpipes, Tecnología AGHP, TL-C12CW-S PWM Quiet Fan CPU Cooler con rodamiento S-FDB, para AMD AM4 AM5/Intel 1151/1155/1200/1700",
+    "precio": "19,90€",
+    "imagen": "img/cooler.png",
+    "categoria": "hardware"
+  },
+  {
+    "id": 19,
+    "nombre": "MSI Forge GK310 - Teclado mecánico para Gaming Red SWITCHES - Interruptores mecánicos Rojos (lineales), Teclas ergonómicas, Base Antideslizante, LED RGB, USB 2.0 - Tamaño estándar",
+    "precio": "60,65€",
+    "imagen": "img/tecladomsi.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 20,
+    "nombre": "Trust Gaming GXT 835 Azor Teclado Retroiluminado",
+    "precio": "19,99€",
+    "imagen": "img/tecladotrust.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 21,
+    "nombre": "Razer Basilisk V3 - Ratón para Juegos",
+    "precio": "54,96€",
+    "imagen": "img/ratonv3.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 22,
+    "nombre": "Logitech G402 Hyperion Fury Ratón Gaming",
+    "precio": "29,99€",
+    "imagen": "img/ratonlogited.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 23,
+    "nombre": "Logitech G432 Auriculares Gaming con Sonido 7.1",
+    "precio": "56,14€",
+    "imagen": "img/cascoslogited.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 24,
+    "nombre": "Razer Kraken V3 X USB - Auriculares Gaming",
+    "precio": "72,99€",
+    "imagen": "img/cascosrazer.png",
+    "categoria": "perifericos"
+  },
+  {
+    "id": 25,
+    "nombre": "Babacom Soporte Portátil Mesa 5 Ángulos",
+    "precio": "14,99€",
+    "imagen": "img/soportePortatil.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 26,
+    "nombre": "Moricher Soporte de Torre para Computadora",
+    "precio": "95,98€",
+    "imagen": "img/soporteTorre.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 27,
+    "nombre": "Lemorele Docking Station USB C 13 en 1",
+    "precio": "38,99€",
+    "imagen": "img/conectores.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 28,
+    "nombre": "ADM PASS GROUP - Alfombrilla Ratón XL 80x30cm",
+    "precio": "11,99€",
+    "imagen": "img/alfombrillanegra.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 29,
+    "nombre": "Realky Alfombrilla Ratón RGB 800×300mm",
+    "precio": "18,99€",
+    "imagen": "img/alfombrillargb.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 30,
+    "nombre": "Yimomoyi Alfombrilla Ratón XXL 800x300mm",
+    "precio": "11,99€",
+    "imagen": "img/alfombrillablanca.png",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 31,
+    "nombre": "Funko Pop! Marvel: Deadpool & Wolverine - Deadpool",
+    "precio": "15,99€",
+    "imagen": "img/deadpool.png",
+    "categoria": "figuras"
+  },
+  {
+    "id": 32,
+    "nombre": "Funko Pop! Dragon Ball - Goku (Kame)",
+    "precio": "16,00€",
+    "imagen": "img/goku.png",
+    "categoria": "figuras"
+  },
+  {
+    "id": 33,
+    "nombre": "Pop! Premium: DS - Rengoku 9th Form",
+    "precio": "18,00€",
+    "imagen": "img/rengoku.png",
+    "categoria": "figuras"
+  },
+  {
+    "id": 34,
+    "nombre": "Funko Pop! Lord of the Rings - Nazgul",
+    "precio": "16,00€",
+    "imagen": "img/nazgul.png",
+    "categoria": "figuras"
+  },
+  {
+    "id": 35,
+    "nombre": "Funko POP! Pokemon - Charizard",
+    "precio": "12,49€",
+    "imagen": "img/charizard.png",
+    "categoria": "figuras"
+  },
+  {
+    "id": 36,
+    "nombre": "Funko Pop! Disney: Stitch with Ukulele",
+    "precio": "15,99€",
+    "imagen": "img/stich.png",
+    "categoria": "figuras"
+  }
+]
