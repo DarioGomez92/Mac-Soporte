@@ -1,31 +1,54 @@
 <?php
 session_start();
 
-// Aquí asumimos que la sesión ya tiene los datos básicos del usuario
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.html');
     exit;
 }
 
-// Ejemplo de datos cargados de sesión (puedes ampliar con consulta a DB si quieres)
 $usuario_id = $_SESSION['usuario_id'];
 $nombre_completo = $_SESSION['nombre_completo'];
 $usuario = $_SESSION['usuario'];
-$correo = ""; // Ideal traerlo de la base con consulta, aquí lo dejamos vacío o lo cargas de sesión si guardas
 
-// Aquí deberías hacer consultas para traer el historial de compras y mensajes, 
-// por ahora los dejamos en arrays simulados para ejemplo
+// Conexión a la base de datos
+$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
 
-$historial_compras = [
-    ['fecha' => '2025-05-10', 'total' => 99.99],
-    ['fecha' => '2025-04-22', 'total' => 59.50]
-];
+// Obtener correo del usuario
+$stmt = $conexion->prepare("SELECT correo FROM usuarios WHERE id = ?");
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+$stmt->bind_result($correo);
+$stmt->fetch();
+$stmt->close();
 
-$historial_mensajes = [
-    ['fecha' => '2025-05-14', 'mensaje' => '¿Cuándo llegará mi pedido?'],
-    ['fecha' => '2025-04-30', 'mensaje' => 'Problema con la garantía del dispositivo']
+// Obtener historial de compras
+$historial_compras = [];
+$sqlCompras = "SELECT fecha_compra, total FROM compras WHERE usuario_id = ?";
+$stmtCompras = $conexion->prepare($sqlCompras);
+$stmtCompras->bind_param("i", $usuario_id);
+$stmtCompras->execute();
+$resultCompras = $stmtCompras->get_result();
+while ($row = $resultCompras->fetch_assoc()) {
+    $historial_compras[] = $row;
+}
+$stmtCompras->close();
 
-];
+// Obtener historial de mensajes de contacto
+$historial_mensajes = [];
+$sqlMensajes = "SELECT fecha_envio, mensaje, modelo_dispositivo FROM formularios_contacto WHERE usuario_id = ?";
+$stmtMensajes = $conexion->prepare($sqlMensajes);
+$stmtMensajes->bind_param("i", $usuario_id);
+$stmtMensajes->execute();
+$resultMensajes = $stmtMensajes->get_result();
+while ($row = $resultMensajes->fetch_assoc()) {
+    $historial_mensajes[] = $row;
+}
+$stmtMensajes->close();
+
+$conexion->close();
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +88,7 @@ $historial_mensajes = [
                         <tbody>
                             <?php foreach ($historial_compras as $compra): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($compra['fecha']); ?></td>
+                                <td><?php echo htmlspecialchars($compra['fecha_compra']); ?></td>
                                 <td><?php echo number_format($compra['total'], 2); ?></td>
                             </tr>
                             <?php endforeach; ?>
@@ -82,10 +105,17 @@ $historial_mensajes = [
                     <ul>
                         <?php foreach ($historial_mensajes as $mensaje): ?>
                             <li>
-                                <time datetime="<?php echo htmlspecialchars($mensaje['fecha']); ?>">
-                                    <?php echo htmlspecialchars($mensaje['fecha']); ?>
-                                </time> - 
-                                <span><?php echo htmlspecialchars($mensaje['mensaje']); ?></span>
+                                <div class="fecha">
+                                    <time datetime="<?php echo htmlspecialchars($mensaje['fecha_envio']); ?>">
+                                        <?php echo htmlspecialchars(str_replace(' ', ' / ', $mensaje['fecha_envio'])); ?>
+                                    </time>
+                                </div>
+                                <div class="modelo">
+                                    <strong>Modelo:</strong> <?php echo htmlspecialchars($mensaje['modelo_dispositivo']); ?>
+                                </div>
+                                <div class="mensajeTexto">
+                                    <strong>Mensaje:</strong> <?php echo htmlspecialchars($mensaje['mensaje']); ?>
+                                </div>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -93,6 +123,7 @@ $historial_mensajes = [
                     <p>No tienes mensajes registrados.</p>
                 <?php endif; ?>
             </section>
+
         </main>
 
         <!-- Contenedor que carga el footer almacenado en su js -->
@@ -103,5 +134,6 @@ $historial_mensajes = [
     <script src="js/nav.js"></script>
 </body>
 </html>
+
 
 
