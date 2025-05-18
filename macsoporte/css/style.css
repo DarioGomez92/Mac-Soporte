@@ -899,7 +899,7 @@ footer p {
 .datosCliente h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: rgb(0, 83, 249);
 }
 
 .datosCliente ul {
@@ -924,7 +924,8 @@ footer p {
 .historialCompras h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: rgb(0, 83, 249);
+    padding-left: 20px;
 }
 
 .historialCompras table {
@@ -965,7 +966,8 @@ footer p {
 .historialMensajes h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: rgb(0, 83, 249);
+    padding-left: 20px;
 }
 
 .historialMensajes ul {
@@ -1004,6 +1006,41 @@ footer p {
   position: relative;
   padding-bottom: 90px;
   box-sizing: border-box;
+}
+
+/* Estilos para el mensaje de aviso en el formulario de contacto */
+#mensajeAviso {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: none; /* Oculto por defecto */
+  transition: opacity 0.3s ease;
+}
+
+#mensajeAviso.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  display: block;
+  opacity: 1;
+}
+
+#mensajeAviso.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+  display: block;
+  opacity: 1;
+}
+
+#mensajeAviso.warning {
+  background-color: #fff3cd;
+  color: #664d03;
+  border: 1px solid #ffecb5;
+  display: block;
+  opacity: 1;
 }
 
 /* Ocultar el modal por defecto */
