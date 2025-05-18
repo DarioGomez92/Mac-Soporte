@@ -39,6 +39,10 @@ function cargarNav() {
             if (data.loggedIn) {
                 menuHTML += `
                     <li><a href="cliente.php">Área de cliente</a></li>
+                    <li><a href="carrito.html">
+                        <img src="img/carrito.svg" alt="Carrito" width="24" height="24">
+                        <span class="contadorCarrito" id="contadorCarrito">0</span>
+                    </a></li>
                     <a href="php/logout.php" class="botonCerrarSesion" title="Cerrar sesión">
                         <img src="img/cerrarSesion.svg" alt="Cerrar sesión" width="24" height="24">
                     </a>
@@ -111,7 +115,30 @@ function cargarNav() {
             document.getElementById("contenedorNavegador").innerHTML = nav;
 
             asignarEventosFormularios();
+
+            if (data.loggedIn) {
+                actualizarContadorCarrito(); // 👈 ACTUALIZA el contador si el usuario está logueado
+            }
         });
+}
+
+async function actualizarContadorCarrito() {
+    try {
+        const response = await fetch('php/obtenerCarrito.php');
+        const carrito = await response.json();
+
+        const totalItems = Array.isArray(carrito)
+            ? carrito.reduce((acc, item) => acc + (parseInt(item.cantidad) || 0), 0)
+            : 0;
+
+        const contador = document.getElementById('contadorCarrito');
+        if (contador) {
+            contador.textContent = totalItems;
+            contador.style.display = totalItems > 0 ? 'inline-block' : 'none';
+        }
+    } catch (error) {
+        console.error('Error actualizando el contador del carrito:', error);
+    }
 }
 
 /* funcion que inicia los eventos del los formularios */
@@ -172,8 +199,7 @@ function asignarEventosFormularios() {
     enlaceRecuperar?.addEventListener("click", function (e) {
         e.stopPropagation();
         abrirModalRecuperar();
-});
-
+    });
 }
 
 function abrirModalUsuario() {
@@ -218,5 +244,3 @@ document.addEventListener("click", function (e) {
         }
     }
 });
-
-
