@@ -1000,7 +1000,7 @@ footer p {
     color: #666;
 }
 
-.contenedorClientes {
+.contenedorClientes, .contenedorCarrito {
   min-height: 100vh;
   display: block;
   position: relative;
@@ -1139,7 +1139,7 @@ td {
     }
 }
 
-/* Diseño para el toast del .botonCarrito */
+/* Diseño para el toast del carrito */
 .contadorCarrito {
     position: absolute;
     top: 15px;
