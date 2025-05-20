@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     function mostrarMensaje(texto, tipo = 'error') {
         avisoDiv.textContent = texto;
-        avisoDiv.className = ''; // Limpiar clases previas
+        avisoDiv.className = '';
         avisoDiv.classList.add(tipo);
         avisoDiv.style.display = 'block';
     }
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('nombre').value = data.nombre;
             document.getElementById('correo').value = data.correo;
             document.getElementById('telefono').value = data.telefono;
-            avisoDiv.style.display = 'none'; // ocultar aviso si todo ok
+            avisoDiv.style.display = 'none'; 
         } else {
             mostrarMensaje('Debes iniciar sesión con una cuenta para poder enviar peticiones de reparación.');
         }
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('formularioContacto').addEventListener('submit', async (e) => {
         e.preventDefault();
-        avisoDiv.style.display = 'none'; // limpiar mensajes previos
+        avisoDiv.style.display = 'none'; 
 
         const modelo = document.getElementById('modelo').value.trim();
         const mensaje = document.getElementById('mensaje').value.trim();

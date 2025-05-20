@@ -43,7 +43,7 @@ foreach ($_SESSION['carrito'] as $producto_id => $cantidad) {
             'nombre' => $productos[$producto_id]['nombre'],
             'precio' => $productos[$producto_id]['precio'],
             'cantidad' => $cantidad,
-            'imagen' => $productos[$producto_id]['imagen'] ?? '', // si quieres mostrar la imagen
+            'imagen' => $productos[$producto_id]['imagen'] ?? '',
         ];
     }
 }
