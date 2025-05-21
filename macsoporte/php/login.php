@@ -9,8 +9,9 @@ if ($conexion->connect_error) {
 $usuario = $conexion->real_escape_string($_POST['usuario']);
 $contraseñaIngresada = $_POST['contraseña'];
 
-$sql = "SELECT id, nombre_completo, usuario, correo, contraseña FROM usuarios 
+$sql = "SELECT id, nombre_completo, usuario, correo, contraseña, rol FROM usuarios 
         WHERE usuario = '$usuario' OR correo = '$usuario' LIMIT 1";
+
 $resultado = $conexion->query($sql);
 
 $response = [];
@@ -23,9 +24,11 @@ if ($resultado->num_rows == 1) {
         $_SESSION['usuario_id'] = $dato['id'];
         $_SESSION['usuario'] = $dato['usuario'];
         $_SESSION['nombre_completo'] = $dato['nombre_completo'];
+        $_SESSION['rol'] = $dato['rol'];
 
         $response['status'] = 'success';
         $response['message'] = 'Inicio de sesión exitoso';
+        $response['rol'] = $dato['rol'];
     } else {
         /* contraseña incorrecta */
         $response['status'] = 'error';

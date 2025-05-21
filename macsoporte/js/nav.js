@@ -37,12 +37,18 @@ function cargarNav() {
             `;
 
             if (data.loggedIn) {
+                if (data.rol === "admin") {
+                    menuHTML += `<li><a href="admin.php">Admin</a></li>`;
+                }
+
                 menuHTML += `
                     <li><a href="cliente.php">Área de cliente</a></li>
-                    <li><a href="carrito.html">
-                        <img src="img/carrito.svg" alt="Carrito" width="24" height="24">
-                        <span class="contadorCarrito" id="contadorCarrito">0</span>
-                    </a></li>
+                    <li class="iconoToastCarrito">
+                        <a href="carrito.html" class="iconoCarrito">
+                            <img src="img/carrito.svg" alt="Carrito" width="24" height="24">
+                            <span class="contadorCarrito" id="contadorCarrito">0</span>
+                        </a>
+                    </li>
                     <a href="php/logout.php" class="botonCerrarSesion" title="Cerrar sesión">
                         <img src="img/cerrarSesion.svg" alt="Cerrar sesión" width="24" height="24">
                     </a>
@@ -117,7 +123,7 @@ function cargarNav() {
             asignarEventosFormularios();
 
             if (data.loggedIn) {
-                actualizarContadorCarrito(); // 👈 ACTUALIZA el contador si el usuario está logueado
+                actualizarContadorCarrito();
             }
         });
 }
@@ -173,7 +179,11 @@ function asignarEventosFormularios() {
         const jsonResponse = await respuesta.json();
 
         if (jsonResponse.status === 'success') {
-            window.location.href = "cliente.php"; 
+            if (jsonResponse.rol === 'admin') {
+                window.location.href = "admin.php";
+            } else {
+                window.location.href = "cliente.php";
+            }
         } else {
             document.getElementById("mensajeLogin").innerText = jsonResponse.message;
             formLogin.reset();
