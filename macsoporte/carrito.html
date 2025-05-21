@@ -11,31 +11,35 @@
     <div id="contenedorNavegador"></div>
 
     <div class="contenedorCarrito">
-        <main class="carritoArea">
+        <h1 class="tituloCarrito">Carrito de Compras</h1>
+        <div id="carritoVacio">
+          Tu carrito está vacío.
+        </div>
 
-          <h1 class="tituloCarrito">Carrito de Compras</h1>
-          <div id="carritoVacio">Tu carrito está vacío.</div>
-              
-          <table id="tablaCarrito" style="display: none;">
-              <thead>
-                <tr>
-                  <th>PRODUCTO</th>
-                  <th>PRECIO</th>
-                  <th>CANTIDAD</th>
-                  <th>SUBTOTAL</th>
-                  <th>BORRAR</th>
-                </tr>
-              </thead>
-              <tbody id="cuerpoTabla"></tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3" class="total">Total</td>
-                  <td colspan="2" class="total" id="totalCarrito">0 €</td>
-                </tr>
-              </tfoot>
-          </table>
+        <table id="tablaCarrito" style="display: none;">
+            <thead>
+              <tr>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>SUBTOTAL</th>
+                <th>BORRAR</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" class="total">Total</td>
+                <td colspan="2" class="total" id="totalCarrito">0 €</td>
+              </tr>
+            </tfoot> 
+        </table>
 
-        </main>
+        <div class="contenedorBotonPago" id="pagarAhora" style="display: none;">
+          <form action="php/crearSesionPago.php" method="POST">
+              <button type="submit" class="botonPagarAhora">Pagar ahora</button>
+          </form>
+        </div>
 
         <!-- Contenedor que carga el footer almacenado en su js -->
         <div id="contenedorFooter"></div>
