@@ -1,52 +1,32 @@
 <?php
 session_start();
+require 'conexion.php';
 
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['usuario_id'])) {
-    echo json_encode(['error' => 'No autenticado']);
-    exit;
-}
-
-if (!isset($_SESSION['carrito'])) {
+if (!isset($_SESSION['carrito']) || empty($_SESSION['carrito'])) {
     echo json_encode([]);
     exit;
 }
 
-$json_file = __DIR__ . '/../data/productos.json';
+$carrito = $_SESSION['carrito'];
+$ids = implode(',', array_map('intval', array_keys($carrito)));
 
-if (!file_exists($json_file)) {
-    echo json_encode(['error' => 'Archivo de productos no encontrado']);
-    exit;
-}
+$sql = "SELECT id, descripcion, precio, imagen FROM productos WHERE id IN ($ids)";
+$result = $conn->query($sql);
 
-$json_data = file_get_contents($json_file);
-$productos_array = json_decode($json_data, true);
-
-if ($productos_array === null) {
-    echo json_encode(['error' => 'Error al decodificar JSON']);
-    exit;
-}
-
-/* Codigo para reorganizar los productos por id's */
 $productos = [];
-foreach ($productos_array as $producto) {
-    $productos[$producto['id']] = $producto;
+
+while ($row = $result->fetch_assoc()) {
+    $id = $row['id'];
+    $productos[] = [
+        'id' => $id,
+        'descripcion' => $row['descripcion'],
+        'precio' => number_format($row['precio'], 2, ',', '.') . ' €',
+        'cantidad' => $carrito[$id],
+        'imagen' => $row['imagen']
+    ];
 }
 
-$carrito = [];
-
-foreach ($_SESSION['carrito'] as $producto_id => $cantidad) {
-    if (isset($productos[$producto_id])) {
-        $carrito[] = [
-            'id' => $producto_id,
-            'nombre' => $productos[$producto_id]['nombre'],
-            'precio' => $productos[$producto_id]['precio'],
-            'cantidad' => $cantidad,
-            'imagen' => $productos[$producto_id]['imagen'] ?? '',
-        ];
-    }
-}
-
-echo json_encode($carrito);
+echo json_encode($productos);
 

@@ -8,6 +8,11 @@ function cargarNav() {
                         <div class="contenedorLogo" id="contenedorLogo">
                             <img src="img/logo.png">
                         </div>
+                        <button class="botonHamburguesa" id="botonHamburguesa" aria-label="Menú">
+                            <span class="linea"></span>
+                            <span class="linea"></span>
+                            <span class="linea"></span>
+                        </button>
                         <div class="contenedorMenu" id="contenedorMenu">
                             <ul class="menu" id="menu">
                                 <li><a class="inicio" href="index.html" id="inicio">Inicio</a></li>
@@ -22,6 +27,8 @@ function cargarNav() {
                 </div>
             </header>
         `;
+        // Añadir funcionalidad al botón hamburguesa
+        agregarFuncionHamburguesa();
         return;
     }
 
@@ -66,6 +73,11 @@ function cargarNav() {
                             <div class="contenedorLogo" id="contenedorLogo">
                                 <img src="img/logo.png">
                             </div>
+                            <button class="botonHamburguesa" id="botonHamburguesa" aria-label="Menú">
+                                <span class="linea"></span>
+                                <span class="linea"></span>
+                                <span class="linea"></span>
+                            </button>
                             <div class="contenedorMenu" id="contenedorMenu">
                                 <ul class="menu" id="menu">
                                     ${menuHTML}
@@ -121,11 +133,29 @@ function cargarNav() {
             document.getElementById("contenedorNavegador").innerHTML = nav;
 
             asignarEventosFormularios();
+            agregarFuncionHamburguesa();
 
             if (data.loggedIn) {
                 actualizarContadorCarrito();
             }
         });
+}
+
+function agregarFuncionHamburguesa() {
+    const botonHamburguesa = document.getElementById("botonHamburguesa");
+    const menu = document.getElementById("menu");
+
+    if (!botonHamburguesa || !menu) return;
+
+    botonHamburguesa.addEventListener("click", () => {
+        menu.classList.toggle("activo");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !botonHamburguesa.contains(e.target)) {
+            menu.classList.remove("activo");
+        }
+    });
 }
 
 async function actualizarContadorCarrito() {
@@ -151,6 +181,7 @@ async function actualizarContadorCarrito() {
 function asignarEventosFormularios() {
     const formRegistro = document.getElementById("formRegistro");
     const formLogin = document.getElementById("formLogin");
+    const formRecuperar = document.getElementById("formRecuperar");
 
     formRegistro?.addEventListener("submit", async function (e) {
         e.preventDefault();
