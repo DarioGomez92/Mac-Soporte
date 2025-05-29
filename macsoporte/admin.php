@@ -1,15 +1,15 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
+
 if (!isset($_SESSION['usuario_id']) || $_SESSION['rol'] !== 'admin') {
     header("Location: ../index.html");
     exit;
 }
 
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
+require_once 'php/conexion.php';
 
+/* Consulta para coger todos los usuarios registrados */
 $sqlUsuarios = "SELECT * FROM usuarios";
 $resultadoUsuarios = $conexion->query($sqlUsuarios);
 ?>
@@ -20,15 +20,17 @@ $resultadoUsuarios = $conexion->query($sqlUsuarios);
     <meta charset="UTF-8">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="paginaAdmin">
     
     <div id="contenedorNavegador"></div>
 
-    <div class="contenedorAdmin">
+    <div class="contenedorAdmin aparecer">
         <h1>Panel de Administración</h1>
         <p>Bienvenido, <?php echo $_SESSION['nombre_completo']; ?> (<?php echo $_SESSION['rol']; ?>)</p>
 
+        <!-- Se recorre la lista de usuarios y se reflejan sus datos -->
         <?php while ($usuario = $resultadoUsuarios->fetch_assoc()): ?>
             <div class="usuarioAdmin">
                 <h2 class="nombreUsuarioAdmin"><?php echo $usuario['nombre_completo']; ?> (<?php echo $usuario['usuario']; ?>)</h2>
@@ -57,6 +59,7 @@ $resultadoUsuarios = $conexion->query($sqlUsuarios);
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Recorre todos los mensajes almacenados y los muestra -->
                             <?php while ($mensaje = $mensajes->fetch_assoc()): ?>
                                 <?php 
                                     $fechaHora = $mensaje['fecha_envio'];
@@ -85,7 +88,6 @@ $resultadoUsuarios = $conexion->query($sqlUsuarios);
                     <?php while ($compra = $compras->fetch_assoc()): ?>
                         <?php 
                             $fechaHoraCompra = $compra['fecha_compra'];
-                            // Fecha con formato día-mes-año / hora
                             $fechaCompraFormateada = date('d-m-Y', strtotime($fechaHoraCompra)) . " / " . date('H:i:s', strtotime($fechaHoraCompra));
                         ?>
                         <p class="datosComprasAdmin">
@@ -107,6 +109,7 @@ $resultadoUsuarios = $conexion->query($sqlUsuarios);
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Recorre todas las compras realizadas y las muestra -->
                                     <?php while ($detalle = $detalles->fetch_assoc()): ?>
                                         <?php 
                                             $producto_id = $detalle['producto_id'];
@@ -132,9 +135,10 @@ $resultadoUsuarios = $conexion->query($sqlUsuarios);
 
         <?php $conexion->close(); ?>
         
-        <div id="contenedorFooter"></div>
     </div>
+    <div id="contenedorFooter"></div>
 
+    <script src="js/animaciones.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/nav.js"></script>
 </body>

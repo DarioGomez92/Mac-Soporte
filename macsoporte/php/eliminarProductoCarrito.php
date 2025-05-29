@@ -1,4 +1,5 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
 
 if (!isset($_SESSION['usuario_id'])) {
@@ -6,6 +7,7 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
+/* Obtenemos el id del producto y si esta actualmente en el carrito lo elimina */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $producto_id = $_POST['producto_id'];
 

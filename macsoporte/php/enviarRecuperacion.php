@@ -6,25 +6,23 @@ require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
+require 'conexion.php';
 
 $correo = trim($_POST['correo_recuperacion']);
 
+/* Validacion de correo vacio */
 if (empty($correo)) {
     echo "Por favor, introduce tu correo electrónico.";
     exit;
 }
 
+/* Validacion de correo electronico */
 if (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $correo)) {
     echo "El correo electrónico no tiene un formato válido.";
     exit;
 }
 
-// Comprobar si el correo existe
+/* Comprueba si el correo existe en la base de datos */
 $stmt = $conexion->prepare("SELECT id FROM usuarios WHERE correo = ?");
 $stmt->bind_param("s", $correo);
 $stmt->execute();
@@ -37,13 +35,14 @@ if ($stmt->num_rows === 0) {
     exit;
 }
 
-// Generar token y guardar en BD
+/* Genera un token y lo guarda en la base de datos */
 $token = bin2hex(random_bytes(16));
 $fecha = date("Y-m-d H:i:s");
 
 $update = $conexion->prepare("UPDATE usuarios SET token_recuperacion = ?, fecha_token = ? WHERE correo = ?");
 $update->bind_param("sss", $token, $fecha, $correo);
 
+/* Crea un enlace para que el usuario cambie su contraseña y lo envia por correo */
 if ($update->execute()) {
     $enlace = "http://localhost/macsoporte/restablecer.php?token=$token";
 

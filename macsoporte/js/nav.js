@@ -27,7 +27,7 @@ function cargarNav() {
                 </div>
             </header>
         `;
-        // Añadir funcionalidad al botón hamburguesa
+
         agregarFuncionHamburguesa();
         return;
     }
@@ -71,7 +71,9 @@ function cargarNav() {
                     <div class="contenedorNavegador" id="contenedorNavegador">
                         <nav class="navegador" id="navegador">
                             <div class="contenedorLogo" id="contenedorLogo">
-                                <img src="img/logo.png">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="Logo">
+                                </a>
                             </div>
                             <button class="botonHamburguesa" id="botonHamburguesa" aria-label="Menú">
                                 <span class="linea"></span>
@@ -116,6 +118,7 @@ function cargarNav() {
                         </div>
                     </div>
                 </div> 
+
                 <div class="modalRecuperar oculto" id="modalRecuperar">
                     <div class="contenidoModal">
                         <span class="cerrar" onclick="cerrarModalRecuperar()">&times;</span>
@@ -132,8 +135,9 @@ function cargarNav() {
 
             document.getElementById("contenedorNavegador").innerHTML = nav;
 
-            asignarEventosFormularios();
             agregarFuncionHamburguesa();
+            asignarEventosFormularios();
+            
 
             if (data.loggedIn) {
                 actualizarContadorCarrito();
@@ -186,6 +190,7 @@ function asignarEventosFormularios() {
     formRegistro?.addEventListener("submit", async function (e) {
         e.preventDefault();
         const formData = new FormData(formRegistro);
+        const mensaje = document.getElementById("mensajeRegistro");
 
         const respuesta = await fetch("php/registro.php", {
             method: "POST",
@@ -193,14 +198,22 @@ function asignarEventosFormularios() {
         });
 
         const texto = await respuesta.text();
-        document.getElementById("mensajeRegistro").innerText = texto;
 
-        formRegistro.reset();
+        mensaje.innerText = texto;
+        if (texto.toLowerCase().includes("exitoso")) {
+            mensaje.classList.remove("error");
+            mensaje.classList.add("exito");
+            formRegistro.reset();
+        } else {
+            mensaje.classList.remove("exito");
+            mensaje.classList.add("error");
+        }
     });
 
     formLogin?.addEventListener("submit", async function (e) {
         e.preventDefault();
         const formData = new FormData(formLogin);
+        const mensaje = document.getElementById("mensajeLogin");
 
         const respuesta = await fetch("php/login.php", {
             method: "POST",
@@ -210,13 +223,11 @@ function asignarEventosFormularios() {
         const jsonResponse = await respuesta.json();
 
         if (jsonResponse.status === 'success') {
-            if (jsonResponse.rol === 'admin') {
-                window.location.href = "admin.php";
-            } else {
-                window.location.href = "cliente.php";
-            }
+            window.location.href = jsonResponse.rol === 'admin' ? "admin.php" : "cliente.php";
         } else {
-            document.getElementById("mensajeLogin").innerText = jsonResponse.message;
+            mensaje.innerText = jsonResponse.message;
+            mensaje.classList.remove("exito");
+            mensaje.classList.add("error");
             formLogin.reset();
         }
     });
@@ -224,6 +235,7 @@ function asignarEventosFormularios() {
     formRecuperar?.addEventListener("submit", async function (e) {
         e.preventDefault();
         const formData = new FormData(formRecuperar);
+        const mensaje = document.getElementById("mensajeRecuperar");
 
         const respuesta = await fetch("php/enviarRecuperacion.php", {
             method: "POST",
@@ -231,9 +243,16 @@ function asignarEventosFormularios() {
         });
 
         const texto = await respuesta.text();
-        document.getElementById("mensajeRecuperar").innerText = texto;
 
-        formRecuperar.reset();
+        mensaje.innerText = texto;
+        if (texto.toLowerCase().includes("enlace") || texto.toLowerCase().includes("enviado")) {
+            mensaje.classList.remove("error");
+            mensaje.classList.add("exito");
+            formRecuperar.reset();
+        } else {
+            mensaje.classList.remove("exito");
+            mensaje.classList.add("error");
+        }
     });
 
     const enlaceRecuperar = document.querySelector(".enlaceRecuperar");

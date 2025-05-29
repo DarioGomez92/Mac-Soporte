@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="paginaCarrito">
@@ -12,11 +13,13 @@
 
     <div class="contenedorCarrito">
         <h1 class="tituloCarrito">Carrito de Compras</h1>
-        <div id="carritoVacio">
-          Tu carrito está vacío.
+        <div id="carritoVacio" class="carritoVacio">
+          <p class="mensajeVacio">Tu carrito está vacío.</p>
+          <p class="mensajeAdicional">Para añadir productos a tu carrito, visita nuestra tienda.</p>
+          <a href="tienda.html" class="botonTienda">Ir a la tienda</a>
         </div>
 
-        <table id="tablaCarrito" style="display: none;">
+        <table id="tablaCarrito" class="aparecer" style="display: none;">
             <thead>
               <tr>
                 <th>PRODUCTO</th>
@@ -35,16 +38,18 @@
             </tfoot> 
         </table>
 
-        <div class="contenedorBotonPago" id="pagarAhora" style="display: none;">
+        <div class="contenedorBotonPago aparecer" id="pagarAhora" style="display: none;">
           <form action="php/crearSesionPago.php" method="POST">
               <button type="submit" class="botonPagarAhora">Pagar ahora</button>
           </form>
         </div>
 
-        <!-- Contenedor que carga el footer almacenado en su js -->
-        <div id="contenedorFooter"></div>
+        
     </div>
+    <!-- Contenedor que carga el footer almacenado en su js -->
+    <div id="contenedorFooter"></div>
 
+    <script src="js/animaciones.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/nav.js"></script>

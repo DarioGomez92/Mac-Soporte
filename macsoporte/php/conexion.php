@@ -1,12 +1,13 @@
 <?php
+/* Conexion a la base de datos */
 $host = 'localhost';        
 $usuario = 'root';         
 $contrasena = '';         
 $basedatos = 'macsoporte_db'; 
 
-$conn = new mysqli($host, $usuario, $contrasena, $basedatos);
+$conexion = new mysqli($host, $usuario, $contrasena, $basedatos);
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 ?>

@@ -1,18 +1,18 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
+
+require_once 'conexion.php';
+
+/* Verifica que hay usuario con sesion iniciada */
 if (!isset($_SESSION['usuario_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'No autenticado']);
     exit;
 }
 
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-if ($conexion->connect_error) {
-    echo json_encode(['status' => 'error', 'message' => 'Error de conexión']);
-    exit;
-}
-
 $usuario_id = $_SESSION['usuario_id'];
 
+/* Se obtiene los datos del usuario de manera segura de la base de datos y se aportan al formulario*/
 $stmt = $conexion->prepare("SELECT nombre_completo, correo, telefono FROM usuarios WHERE id = ?");
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();

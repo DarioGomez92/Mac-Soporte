@@ -1,4 +1,5 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
 
 if (!isset($_SESSION['usuario_id'])) {
@@ -6,17 +7,13 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
+require_once 'php/conexion.php';
+
 $usuario_id = $_SESSION['usuario_id'];
 $nombre_completo = $_SESSION['nombre_completo'];
 $usuario = $_SESSION['usuario'];
 
-// Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
-
-// Obtener correo del usuario
+/* Obtener correo electronico */
 $stmt = $conexion->prepare("SELECT correo FROM usuarios WHERE id = ?");
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();
@@ -24,7 +21,7 @@ $stmt->bind_result($correo);
 $stmt->fetch();
 $stmt->close();
 
-// Obtener historial de compras
+/* Obtener historial de compras y se almacena en un array */
 $historial_compras = [];
 $sqlCompras = "SELECT fecha_compra, total FROM compras WHERE usuario_id = ?";
 $stmtCompras = $conexion->prepare($sqlCompras);
@@ -36,7 +33,7 @@ while ($row = $resultCompras->fetch_assoc()) {
 }
 $stmtCompras->close();
 
-// Obtener historial de mensajes de contacto
+/* Obtener historial de mensajes y se almacena en un array */
 $historial_mensajes = [];
 $sqlMensajes = "SELECT fecha_envio, mensaje, modelo_dispositivo FROM formularios_contacto WHERE usuario_id = ?";
 $stmtMensajes = $conexion->prepare($sqlMensajes);
@@ -57,12 +54,13 @@ $conexion->close();
     <meta charset="UTF-8" />
     <title>Área de Cliente - Mi Cuenta</title>
     <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="paginaCliente">
     <!-- Contenedor que carga el navegador almacenado en el js -->
     <div id="contenedorNavegador"></div>
 
-    <div class="contenedorClientes">
+    <div class="contenedorClientes aparecer">
         <main class="clienteArea">
             <h1>Bienvenido, <?php echo htmlspecialchars($nombre_completo); ?></h1>
 
@@ -125,11 +123,12 @@ $conexion->close();
             </section>
 
         </main>
-
-        <!-- Contenedor que carga el footer almacenado en su js -->
-        <div id="contenedorFooter"></div>
     </div>
 
+    <!-- Contenedor que carga el footer almacenado en su js -->
+    <div id="contenedorFooter"></div>
+
+    <script src="js/animaciones.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/nav.js"></script>
 </body>

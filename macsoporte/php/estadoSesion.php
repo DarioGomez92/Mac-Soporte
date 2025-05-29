@@ -1,8 +1,10 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
 
 header('Content-Type: application/json');
 
+/* Si el usuario esta logueado devuelve un json */
 if (isset($_SESSION['usuario_id'])) {
     echo json_encode([
         'loggedIn' => true,

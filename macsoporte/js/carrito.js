@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const carritoVacio = document.getElementById('carritoVacio');
     const pagarAhora = document.getElementById('pagarAhora');
 
-
     try {
         const response = await fetch('php/obtenerCarrito.php');
         const carrito = await response.json();

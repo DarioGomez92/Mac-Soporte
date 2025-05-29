@@ -1,4 +1,5 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -8,21 +9,17 @@ require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
-// Verificar si el usuario ha iniciado sesión
+require_once 'conexion.php';
+
+/* Se verifica si el usuario a iniciado sesion o no */
 if (!isset($_SESSION['usuario_id'])) {
     echo json_encode(['status' => 'error', 'message' => 'Debes iniciar sesión para enviar el formulario.']);
     exit;
 }
 
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-if ($conexion->connect_error) {
-    echo json_encode(['status' => 'error', 'message' => 'Error de conexión a la base de datos.']);
-    exit;
-}
-
 $usuario_id = $_SESSION['usuario_id'];
 
-// Obtener datos reales del usuario desde la base de datos
+/* Se obtienen los datos del usuario almacenados en la base de datos */
 $stmtUsuario = $conexion->prepare("SELECT nombre_completo, correo, telefono FROM usuarios WHERE id = ?");
 $stmtUsuario->bind_param("i", $usuario_id);
 $stmtUsuario->execute();
@@ -30,7 +27,7 @@ $stmtUsuario->bind_result($nombre, $correo, $telefono);
 $stmtUsuario->fetch();
 $stmtUsuario->close();
 
-// Verificar que se hayan recibido los datos necesarios del formulario
+/* Verifica que se haya recibido los datos del formulario */
 if (!isset($_POST['modelo']) || !isset($_POST['mensaje'])) {
     echo json_encode(['status' => 'error', 'message' => 'Faltan campos del formulario.']);
     exit;
@@ -39,13 +36,13 @@ if (!isset($_POST['modelo']) || !isset($_POST['mensaje'])) {
 $modelo  = trim($_POST['modelo']);
 $mensaje = trim($_POST['mensaje']);
 
-// Validaciones básicas
+/* Verificacion de que los datos no esten vacios */
 if (empty($modelo) || empty($mensaje)) {
     echo json_encode(['status' => 'error', 'message' => 'Todos los campos son obligatorios.']);
     exit;
 }
 
-// Insertar mensaje en la base de datos
+/* Se insertan todos los datos enviados en la base de datos */
 $stmt = $conexion->prepare("INSERT INTO formularios_contacto (usuario_id, modelo_dispositivo, mensaje, fecha_envio) VALUES (?, ?, ?, NOW())");
 $stmt->bind_param("iss", $usuario_id, $modelo, $mensaje);
 
@@ -59,7 +56,7 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conexion->close();
 
-// Enviar correo con PHPMailer
+/* Se envia un correo con PHPMailer al correo añadido cuando el usuario mande un formulario */
 $mail = new PHPMailer(true);
 
 try {
@@ -102,8 +99,8 @@ try {
         echo json_encode(['status' => 'warning', 'message' => 'Mensaje guardado, pero no se pudo enviar el correo.', 'error' => $mail->ErrorInfo]);
         exit;
     }
-} catch (Exception $e) {
-    echo json_encode(['status' => 'error', 'message' => 'Excepción en PHPMailer.', 'error' => $e->getMessage()]);
+} catch (Exception $data) {
+    echo json_encode(['status' => 'error', 'message' => 'Excepción en PHPMailer.', 'error' => $data->getMessage()]);
     exit;
 }
 
