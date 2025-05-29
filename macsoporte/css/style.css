@@ -49,6 +49,7 @@ footer p {
 
 .footerLinks a {
     color: #ffffff;
+    font-weight: bold;
     text-decoration: none;
     margin: 0 8px;
 }
