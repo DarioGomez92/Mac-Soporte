@@ -1,8 +1,5 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
+require_once 'php/conexion.php';
 
 $token = $_GET['token'] ?? '';
 

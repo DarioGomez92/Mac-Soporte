@@ -1,9 +1,5 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
-
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
+require_once 'conexion.php';
 
 $nombre_completo = trim($_POST['nombre_completo']);
 $usuario = trim($_POST['usuario']);
@@ -29,15 +25,21 @@ if (!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $nombre_completo)) {
     exit;
 }
 
+/* Filtro para los nombres de usuarios */
+if (!preg_match('/^(?=.*[a-zA-Z])[a-zA-Z0-9]{3,}$/', $usuario)) {
+    echo "El nombre de usuario debe tener al menos 3 caracteres, solo puede contener letras y números, y no puede ser solo números.";
+    exit;
+}
+
 /* Validar email */
-if (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $correo)) {
+if (!preg_match('/^[a-zA-Z0-9][a-zA-Z0-9._-]{2,}@[a-zA-Z0-9]+(?:[-]?[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/', $correo)) {
     echo "El correo electrónico no tiene un formato válido.";
     exit;
 }
 
 /* Validar teléfono */
-if (!empty($telefono) && !preg_match('/^[0-9]{9,}$/', $telefono)) {
-    echo "El teléfono debe contener al menos 9 dígitos numéricos.";
+if (!empty($telefono) && !preg_match('/^[678][0-9]{8}$/', $telefono)) {
+    echo "El teléfono debe tener exactamente 9 dígitos y comenzar con un 6, 7 o 8.";
     exit;
 }
 

@@ -1,19 +1,57 @@
-const imagenes = document.querySelectorAll('.carruselImagen');
+const carrusel = document.querySelector('.carruselImagenes');
+let imagenes = document.querySelectorAll('.carruselImagen');
 const botonIzquierda = document.querySelector('.izquierda');
 const botonDerecha = document.querySelector('.derecha');
-let indice = 0;
 
-function mostrarImagen(index) {
-  imagenes.forEach(img => img.classList.remove('activa'));
-  imagenes[index].classList.add('activa');
+/* Se duplican la primera y ultima imagen para crear un falso bucle */
+const primera = imagenes[0].cloneNode(true);
+const ultima = imagenes[imagenes.length - 1].cloneNode(true);
+
+carrusel.appendChild(primera);
+carrusel.insertBefore(ultima, imagenes[0]);
+
+imagenes = document.querySelectorAll('.carruselImagen');
+let indice = 1;
+const total = imagenes.length;
+
+/* funcion para actualizar el carrusel */
+function actualizarCarrusel(animar = true) {
+  const ancho = imagenes[0].clientWidth;
+  carrusel.style.transition = animar ? 'transform 0.5s ease' : 'none';
+  carrusel.style.transform = `translateX(-${indice * ancho}px)`;
 }
 
-botonIzquierda.addEventListener('click', () => {
-  indice = (indice - 1 + imagenes.length) % imagenes.length;
-  mostrarImagen(indice);
+/* posicion inicial */
+window.addEventListener('load', () => {
+  actualizarCarrusel(false);
 });
 
 botonDerecha.addEventListener('click', () => {
-  indice = (indice + 1) % imagenes.length;
-  mostrarImagen(indice);
+  if (indice >= total - 1) return;
+  indice++;
+  actualizarCarrusel();
 });
+
+botonIzquierda.addEventListener('click', () => {
+  if (indice <= 0) return;
+  indice--;
+  actualizarCarrusel();
+});
+
+/* Cuando llega a las imagenes duplicadas hace el salto para crear el efecto de bucle infinito */
+carrusel.addEventListener('transitionend', () => {
+  if (indice === total - 1) {
+    indice = 1;
+    actualizarCarrusel(false);
+  } else if (indice === 0) {
+    indice = total - 2;
+    actualizarCarrusel(false);
+  }
+});
+
+setInterval(() => {
+  indice++;
+  actualizarCarrusel();
+}, 5000);
+
+window.addEventListener('resize', () => actualizarCarrusel(false));

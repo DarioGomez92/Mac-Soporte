@@ -1,14 +1,13 @@
 <?php
+/* Se inicia sesion para manejar las variables de sesion */
 session_start();
-$conexion = new mysqli("localhost", "root", "", "macsoporte_db");
 
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
+require_once 'conexion.php';
 
 $usuario = $conexion->real_escape_string($_POST['usuario']);
 $contraseñaIngresada = $_POST['contraseña'];
 
+/* Se busca al usuario por el nombre de usuario o correo */
 $sql = "SELECT id, nombre_completo, usuario, correo, contraseña, rol FROM usuarios 
         WHERE usuario = '$usuario' OR correo = '$usuario' LIMIT 1";
 

@@ -1,3 +1,4 @@
+/* Funcion que actualiza el contador que aparece en el carrito */
 async function actualizarContadorCarrito() {
     try {
         const response = await fetch('php/obtenerCarrito.php');
@@ -17,7 +18,7 @@ async function actualizarContadorCarrito() {
     }
 }
 
-
+/* Funcion para cargar los productos */
 async function cargarProductos() {
     try {
         const response = await fetch('data/productos.json');

@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         avisoDiv.style.display = 'block';
     }
 
-    // Intentamos autocompletar con datos del usuario
+    /* Funcion para autocompletar los mdatos del formulario */
     try {
         const res = await fetch('php/obtenerDatosUsuario.php');
         const data = await res.json();
