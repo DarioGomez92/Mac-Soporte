@@ -84,7 +84,7 @@ footer p {
     opacity: 0.8;
 }
 
-.paginaCliente footer, .paginaCarrito footer, .paginaAdmin footer, .paginasLegales footer {
+.paginaCliente footer, .paginaCarrito footer, .paginaAdmin footer, .paginasLegales footer, .paginaTerminos footer, .paginaAvisos footer, .paginaCookies footer, .paginaPrivacidad footer {
     background-color: rgb(169, 198, 255);
     padding: 30px;
     box-sizing: border-box;
