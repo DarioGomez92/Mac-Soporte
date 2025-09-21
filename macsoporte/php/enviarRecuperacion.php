@@ -52,7 +52,7 @@ if ($update->execute()) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'dariomlg.mlg@gmail.com'; 
+        $mail->Username   = ''; 
         $mail->Password   = 'dfje ieyu wjrl sdly'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
