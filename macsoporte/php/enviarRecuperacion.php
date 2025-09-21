@@ -65,7 +65,7 @@ if ($update->execute()) {
             ]
         ];
 
-        $mail->setFrom('dariomlg.mlg@gmail.com', 'Mac Soporte');
+        $mail->setFrom('', 'Mac Soporte');
         $mail->addAddress($correo);
         $mail->isHTML(true);
         $mail->Subject = "Recuperacion de contraseña - Mac Soporte";
